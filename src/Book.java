@@ -33,6 +33,7 @@ public class Book {
 
     @Override
     public String toString() {
+
         return "Название книги: " + title + ", год издания: " + year + " г.";
     }
 
@@ -41,12 +42,12 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return year == book.year && title.equals(book.title);
+        return year == book.year && title.equals(book.title) && author.equals(book.author);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, year);
+        return Objects.hash(title, year, author);
     }
 }
 
